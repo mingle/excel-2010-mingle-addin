@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{211c77dc-1635-4f09-afdf-f99eebf5e4f1}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <AssemblyName>spec</AssemblyName>
+    <Name>spec</Name>
+    <RootNamespace>spec</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="fake_view.rb" />
+    <None Include="fake_view.rb" />
+    <None Include="fake_view.rb" />
+    <None Include="mingle_office_spec.rb" />
+    <None Include="mingle_office_spec.rb" />
+    <None Include="mingle_office_spec.rb" />
+    <None Include="mingle_office_spec.rb" />
+    <None Include="queries_spec.rb" />
+    <None Include="queries_view_spec.rb" />
+    <None Include="queries_view_spec.rb" />
+    <None Include="query_spec.rb" />
+    <None Include="scenario_spec.rb" />
+    <None Include="scenario_spec.rb" />
+    <None Include="scenario_spec.rb" />
+    <None Include="scenario_spec.rb" />
+    <None Include="scenario_spec.rb" />
+    <None Include="settings_spec.rb" />
+    <None Include="spec_helper.rb" />
+    <None Include="spec_helper.rb" />
+    <None Include="spec_helper.rb" />
+    <None Include="spec_helper.rb" />
+    <None Include="spec_helper.rb" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+full_name: Bundler::RubygemsIntegration::Legacy#find_name
+is_singleton: false
+name: find_name
+params: (name)
+visibility: public

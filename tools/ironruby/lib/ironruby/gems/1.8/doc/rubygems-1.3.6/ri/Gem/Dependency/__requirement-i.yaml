@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #requirement"
+full_name: Gem::Dependency#__requirement
+is_singleton: false
+name: __requirement
+params: ()
+visibility: public

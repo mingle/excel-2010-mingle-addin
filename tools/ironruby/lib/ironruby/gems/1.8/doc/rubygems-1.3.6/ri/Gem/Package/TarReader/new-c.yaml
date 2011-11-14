@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: reader
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new TarReader on <tt>io</tt> and yields it to the block, if given.
+full_name: Gem::Package::TarReader::new
+is_singleton: true
+name: new
+params: (io) {|reader| ...}
+visibility: public

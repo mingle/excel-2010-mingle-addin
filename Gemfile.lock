@@ -1,0 +1,31 @@
+GIT
+  remote: https://github.com/vertiginous/fakefs.git
+  revision: 7a35534e02128c95650d59fd95d34ef7cb04313b
+  specs:
+    fakefs (0.3.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    diff-lcs (1.1.2)
+    highline (1.6.2)
+    json_pure (1.5.3)
+    rake (0.9.2)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  fakefs!
+  highline
+  json_pure
+  rake
+  rspec

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+full_name: Bundler::RubygemsIntegration#read_binary
+is_singleton: false
+name: read_binary
+params: (path)
+visibility: public

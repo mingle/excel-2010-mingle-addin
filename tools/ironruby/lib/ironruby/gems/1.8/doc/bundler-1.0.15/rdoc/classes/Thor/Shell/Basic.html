@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Thor::Shell::Basic</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Thor::Shell::Basic</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/bundler/vendor/thor/shell/basic_rb.html">
+                lib/bundler/vendor/thor/shell/basic.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000052">ask</a>&nbsp;&nbsp;
+      <a href="#M000062">dynamic_width</a>&nbsp;&nbsp;
+      <a href="#M000063">dynamic_width_stty</a>&nbsp;&nbsp;
+      <a href="#M000064">dynamic_width_tput</a>&nbsp;&nbsp;
+      <a href="#M000060">error</a>&nbsp;&nbsp;
+      <a href="#M000059">file_collision</a>&nbsp;&nbsp;
+      <a href="#M000056">no?</a>&nbsp;&nbsp;
+      <a href="#M000051">padding=</a>&nbsp;&nbsp;
+      <a href="#M000057">print_table</a>&nbsp;&nbsp;
+      <a href="#M000058">print_wrapped</a>&nbsp;&nbsp;
+      <a href="#M000053">say</a>&nbsp;&nbsp;
+      <a href="#M000054">say_status</a>&nbsp;&nbsp;
+      <a href="#M000061">terminal_width</a>&nbsp;&nbsp;
+      <a href="#M000066">truncate</a>&nbsp;&nbsp;
+      <a href="#M000065">unix?</a>&nbsp;&nbsp;
+      <a href="#M000055">yes?</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">base</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">padding</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000052" class="method-detail">
+        <a name="M000052"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000052.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000052.html');return false;">
+          <span class="method-name">ask</span><span class="method-args">(statement, color=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Ask something to the user and receives a response.
+</p>
+<h4>Example</h4>
+<p>
+<a href="Basic.html#M000052">ask</a>(&quot;What is your name?&quot;)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000060" class="method-detail">
+        <a name="M000060"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000060.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000060.html');return false;">
+          <span class="method-name">error</span><span class="method-args">(statement)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Called if something goes wrong during the execution. This is used by <a
+href="../../Thor.html">Thor</a> internally and should not be used inside
+your scripts. If someone went wrong, you can always raise an exception. If
+you raise a <a href="../Error.html">Thor::Error</a>, it will be rescued and
+wrapped in the method below.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000059" class="method-detail">
+        <a name="M000059"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000059.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000059.html');return false;">
+          <span class="method-name">file_collision</span><span class="method-args">(destination) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Deals with file collision and returns true if the file should be overwriten
+and false otherwise. If a block is given, it uses the block response as the
+content for the diff.
+</p>
+<h4>Parameters</h4>
+<table>
+<tr><td valign="top">destination&lt;String&gt;:</td><td>the destination file to solve conflicts
+
+</td></tr>
+<tr><td valign="top">block&lt;Proc&gt;:</td><td>an optional block that returns the value to be used in diff
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000056.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000056.html');return false;">
+          <span class="method-name">no?</span><span class="method-args">(statement, color=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Make a question the to user and returns true if the user replies
+&quot;n&quot; or &quot;no&quot;.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000051.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000051.html');return false;">
+          <span class="method-name">padding=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the output padding, not allowing less than zero values.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000057.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000057.html');return false;">
+          <span class="method-name">print_table</span><span class="method-args">(table, options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Prints a table.
+</p>
+<h4>Parameters</h4>
+<p>
+Array[Array[String, String, &#8230;]]
+</p>
+<h4>Options</h4>
+<table>
+<tr><td valign="top">ident&lt;Integer&gt;:</td><td>Indent the first column by ident value.
+
+</td></tr>
+<tr><td valign="top">colwidth&lt;Integer&gt;:</td><td>Force the first column to colwidth spaces wide.
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000058.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000058.html');return false;">
+          <span class="method-name">print_wrapped</span><span class="method-args">(message, options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Prints a long string, word-wrapping the text to the current width of the
+terminal display. Ideal for printing heredocs.
+</p>
+<h4>Parameters</h4>
+<p>
+String
+</p>
+<h4>Options</h4>
+<table>
+<tr><td valign="top">ident&lt;Integer&gt;:</td><td>Indent each line of the printed paragraph by ident value.
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000053.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000053.html');return false;">
+          <span class="method-name">say</span><span class="method-args">(message=&quot;&quot;, color=nil, force_new_line=(message.to_s !~ /( |\t)$/))</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Say (print) something to the user. If the sentence ends with a whitespace
+or tab character, a new line is not appended (print + flush). Otherwise are
+passed straight to puts (behavior got from Highline).
+</p>
+<h4>Example</h4>
+<p>
+<a href="Basic.html#M000053">say</a>(&quot;I know you knew that.&quot;)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000054.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000054.html');return false;">
+          <span class="method-name">say_status</span><span class="method-args">(status, message, log_status=true)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Say a status with the given color and appends the message. Since this
+method is used frequently by actions, it allows nil or false to be given in
+log_status, avoiding the message from being shown. If a Symbol is given in
+log_status, it&#8216;s used as the color.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000055" class="method-detail">
+        <a name="M000055"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000055.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000055.html');return false;">
+          <span class="method-name">yes?</span><span class="method-args">(statement, color=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Make a question the to user and returns true if the user replies
+&quot;y&quot; or &quot;yes&quot;.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000062" class="method-detail">
+        <a name="M000062"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000062.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000062.html');return false;">
+          <span class="method-name">dynamic_width</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Calculate the dynamic width of the terminal
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000063" class="method-detail">
+        <a name="M000063"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000063.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000063.html');return false;">
+          <span class="method-name">dynamic_width_stty</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000064" class="method-detail">
+        <a name="M000064"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000064.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000064.html');return false;">
+          <span class="method-name">dynamic_width_tput</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000061.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000061.html');return false;">
+          <span class="method-name">terminal_width</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This code was copied from Rake, available under MIT-LICENSE Copyright (c)
+2003, 2004 Jim Weirich
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000066" class="method-detail">
+        <a name="M000066"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000066.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000066.html');return false;">
+          <span class="method-name">truncate</span><span class="method-args">(string, width)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000065" class="method-detail">
+        <a name="M000065"></a>
+
+        <div class="method-heading">
+          <a href="Basic.src/M000065.html" target="Code" class="method-signature"
+            onclick="popupCode('Basic.src/M000065.html');return false;">
+          <span class="method-name">unix?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

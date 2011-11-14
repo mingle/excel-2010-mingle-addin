@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+full_name: Bundler::RubygemsIntegration#loaded_specs
+is_singleton: false
+name: loaded_specs
+params: (name)
+visibility: public

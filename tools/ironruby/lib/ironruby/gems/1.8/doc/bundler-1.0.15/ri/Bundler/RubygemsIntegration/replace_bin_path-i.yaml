@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Used to make bin stubs that are not created by bundler work under bundler.
+  The new Gem.bin_path only considers gems in <tt>specs</tt>
+full_name: Bundler::RubygemsIntegration#replace_bin_path
+is_singleton: false
+name: replace_bin_path
+params: (specs)
+visibility: public

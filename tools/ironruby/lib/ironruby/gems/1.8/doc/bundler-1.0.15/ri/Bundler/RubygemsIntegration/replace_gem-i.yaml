@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+full_name: Bundler::RubygemsIntegration#replace_gem
+is_singleton: false
+name: replace_gem
+params: (specs)
+visibility: public

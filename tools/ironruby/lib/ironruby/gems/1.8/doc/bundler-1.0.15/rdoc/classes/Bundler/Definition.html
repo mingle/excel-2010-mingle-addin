@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Bundler::Definition</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Bundler::Definition</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/bundler/definition_rb.html">
+                lib/bundler/definition.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000219">build</a>&nbsp;&nbsp;
+      <a href="#M000229">current_dependencies</a>&nbsp;&nbsp;
+      <a href="#M000238">ensure_equivalent_gemfile_and_lockfile</a>&nbsp;&nbsp;
+      <a href="#M000235">groups</a>&nbsp;&nbsp;
+      <a href="#M000232">index</a>&nbsp;&nbsp;
+      <a href="#M000236">lock</a>&nbsp;&nbsp;
+      <a href="#M000227">missing_specs</a>&nbsp;&nbsp;
+      <a href="#M000220">new</a>&nbsp;&nbsp;
+      <a href="#M000226">new_platform?</a>&nbsp;&nbsp;
+      <a href="#M000224">new_specs</a>&nbsp;&nbsp;
+      <a href="#M000234">no_sources?</a>&nbsp;&nbsp;
+      <a href="#M000225">removed_specs</a>&nbsp;&nbsp;
+      <a href="#M000228">requested_specs</a>&nbsp;&nbsp;
+      <a href="#M000231">resolve</a>&nbsp;&nbsp;
+      <a href="#M000222">resolve_remotely!</a>&nbsp;&nbsp;
+      <a href="#M000221">resolve_with_cache!</a>&nbsp;&nbsp;
+      <a href="#M000233">rubygems_index</a>&nbsp;&nbsp;
+      <a href="#M000223">specs</a>&nbsp;&nbsp;
+      <a href="#M000230">specs_for</a>&nbsp;&nbsp;
+      <a href="#M000237">to_lock</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="GemHelpers.html">GemHelpers</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">dependencies</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">platforms</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">sources</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000219" class="method-detail">
+        <a name="M000219"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000219.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000219.html');return false;">
+          <span class="method-name">build</span><span class="method-args">(gemfile, lockfile, unlock)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000220" class="method-detail">
+        <a name="M000220"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000220.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000220.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(lockfile, dependencies, sources, unlock)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000229.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000229.html');return false;">
+          <span class="method-name">current_dependencies</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000238" class="method-detail">
+        <a name="M000238"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000238.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000238.html');return false;">
+          <span class="method-name">ensure_equivalent_gemfile_and_lockfile</span><span class="method-args">(explicit_flag = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000235.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000235.html');return false;">
+          <span class="method-name">groups</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000232.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000232.html');return false;">
+          <span class="method-name">index</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000236.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000236.html');return false;">
+          <span class="method-name">lock</span><span class="method-args">(file)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000227" class="method-detail">
+        <a name="M000227"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000227.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000227.html');return false;">
+          <span class="method-name">missing_specs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000226" class="method-detail">
+        <a name="M000226"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000226.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000226.html');return false;">
+          <span class="method-name">new_platform?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000224.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000224.html');return false;">
+          <span class="method-name">new_specs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000234.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000234.html');return false;">
+          <span class="method-name">no_sources?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000225.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000225.html');return false;">
+          <span class="method-name">removed_specs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000228" class="method-detail">
+        <a name="M000228"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000228.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000228.html');return false;">
+          <span class="method-name">requested_specs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000231.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000231.html');return false;">
+          <span class="method-name">resolve</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000222" class="method-detail">
+        <a name="M000222"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000222.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000222.html');return false;">
+          <span class="method-name">resolve_remotely!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000221.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000221.html');return false;">
+          <span class="method-name">resolve_with_cache!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000233.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000233.html');return false;">
+          <span class="method-name">rubygems_index</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000223.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000223.html');return false;">
+          <span class="method-name">specs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000230.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000230.html');return false;">
+          <span class="method-name">specs_for</span><span class="method-args">(groups)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
+
+        <div class="method-heading">
+          <a href="Definition.src/M000237.html" target="Code" class="method-signature"
+            onclick="popupCode('Definition.src/M000237.html');return false;">
+          <span class="method-name">to_lock</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

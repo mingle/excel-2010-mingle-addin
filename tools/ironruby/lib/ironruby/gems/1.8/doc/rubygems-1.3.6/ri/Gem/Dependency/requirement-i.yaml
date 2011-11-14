@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: __requirement
+block_params: 
+comment: 
+full_name: Gem::Dependency#requirement
+is_singleton: false
+name: requirement
+params: ()
+visibility: public

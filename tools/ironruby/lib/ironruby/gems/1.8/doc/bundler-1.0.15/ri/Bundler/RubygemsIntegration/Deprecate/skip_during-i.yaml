@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: ""
+comment: 
+full_name: Bundler::RubygemsIntegration::Deprecate#skip_during
+is_singleton: false
+name: skip_during
+params: () {|| ...}
+visibility: public

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+full_name: Bundler::RubygemsIntegration#ruby_engine
+is_singleton: false
+name: ruby_engine
+params: ()
+visibility: public

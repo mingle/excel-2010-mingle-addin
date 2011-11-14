@@ -1,0 +1,80 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Deprecate
+  value: "::Deprecate"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Deprecate
+  value: Gem::Deprecate
+full_name: Bundler::RubygemsIntegration
+includes: []
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: bin_path
+- !ruby/object:RI::MethodSummary 
+  name: clear_paths
+- !ruby/object:RI::MethodSummary 
+  name: configuration
+- !ruby/object:RI::MethodSummary 
+  name: download_gem
+- !ruby/object:RI::MethodSummary 
+  name: fetch_specs
+- !ruby/object:RI::MethodSummary 
+  name: gem_bindir
+- !ruby/object:RI::MethodSummary 
+  name: gem_dir
+- !ruby/object:RI::MethodSummary 
+  name: gem_path
+- !ruby/object:RI::MethodSummary 
+  name: inflate
+- !ruby/object:RI::MethodSummary 
+  name: loaded_specs
+- !ruby/object:RI::MethodSummary 
+  name: mark_loaded
+- !ruby/object:RI::MethodSummary 
+  name: marshal_spec_dir
+- !ruby/object:RI::MethodSummary 
+  name: path
+- !ruby/object:RI::MethodSummary 
+  name: platforms
+- !ruby/object:RI::MethodSummary 
+  name: preserve_paths
+- !ruby/object:RI::MethodSummary 
+  name: read_binary
+- !ruby/object:RI::MethodSummary 
+  name: replace_bin_path
+- !ruby/object:RI::MethodSummary 
+  name: replace_entrypoints
+- !ruby/object:RI::MethodSummary 
+  name: replace_gem
+- !ruby/object:RI::MethodSummary 
+  name: replace_refresh
+- !ruby/object:RI::MethodSummary 
+  name: reverse_rubygems_kernel_mixin
+- !ruby/object:RI::MethodSummary 
+  name: ruby_engine
+- !ruby/object:RI::MethodSummary 
+  name: sources
+- !ruby/object:RI::MethodSummary 
+  name: sources=
+- !ruby/object:RI::MethodSummary 
+  name: spec_from_gem
+- !ruby/object:RI::MethodSummary 
+  name: stub_source_index137
+- !ruby/object:RI::MethodSummary 
+  name: stub_source_index170
+- !ruby/object:RI::MethodSummary 
+  name: ui=
+- !ruby/object:RI::MethodSummary 
+  name: user_home
+- !ruby/object:RI::MethodSummary 
+  name: with_build_args
+name: RubygemsIntegration
+superclass: Object

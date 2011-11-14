@@ -1,0 +1,102 @@
+$LOAD_PATH << File.dirname(__FILE__) + '/../lib'
+
+require 'rspec/core/rake_task'
+require 'rubygems'
+require 'highline/import'
+require 'ruby/lib/web.rb'
+require 'ruby/lib/go_artifacts.rb'
+
+sln = 'AddIn2010.sln'
+cfg = ENV["CONFIG"]
+dotnet = ENV["DOTNETPATH"]
+vspath = ENV["VSPATH"]
+pipeline = !ENV["GO_PIPELINE_LABEL"].to_s.empty? ? ENV["GO_PIPELINE_LABEL"] : '0'
+
+VERSION_NUMBER = "1.0.0.#{pipeline}"
+
+task :build => [:compile, :spec, :publish]
+
+task :clean do
+	clean 'build'
+	clean 'ExcelAddIn/publish'
+	clean 'Project2010Addin/publish'
+	sh "#{dotnet}msbuild.exe /t:Clean /p:configuration=#{cfg} #{sln}"
+end
+
+task :compile do
+	puts "Building '#{sln}' using '#{cfg}' configuration."
+	sh "#{dotnet}msbuild.exe /t:Rebuild /p:configuration=#{cfg} #{sln}"
+end
+
+task :quick_compile do
+	puts "Building '#{sln}' using '#{cfg}' configuration."
+	sh "#{dotnet}msbuild.exe /p:configuration=#{cfg} #{sln}"
+end
+
+task :compilenoconfig do
+	puts "Building '#{sln}'."
+	sh "#{dotnet}msbuild.exe /t:Rebuild;Publish #{sln}"
+end
+
+task :publish => [:verify_version] do
+	puts "Publishing '#{sln}' at version #{VERSION_NUMBER}"
+	sh "#{dotnet}msbuild.exe /t:Publish #{sln} /p:publishdir=publish/ /p:PluginVersion=#{VERSION_NUMBER}"
+	mkdir_p 'build/publish' unless File.exists? 'build/publish'
+	zip 'ExcelAddin/publish', 'build/publish/ExcelAddin.zip'
+	#zip 'Project2010Addin/publish', 'build/publish/Project2010Addin.zip'
+end
+
+task :spec => [:dependency_spec, :office_spec]
+
+task :specq => [:query_spec]
+
+RSpec::Core::RakeTask.new(:office_spec) do | t |
+	t.skip_bundler = true
+end
+
+RSpec::Core::RakeTask.new(:dependency_spec) do |t|
+  t.pattern = 'ruby/spec/**/*.rb'
+  t.skip_bundler = true
+end
+
+task :get_dependencies => [:get_go_credentials] do
+	get_dependencies
+end
+
+task :get_go_credentials do
+	@username = ask('GO username: ') { |q| q.echo = false }
+	@password = ask('GO password: ') { |q| q.echo = false }
+end
+
+task :gems do
+	clean '.bundle'
+	mkdir 'vendor' unless File.exists? 'vendor'
+	sh 'bundle install --path vendor'
+end
+
+task :verify_version do
+	require 'rexml/document'
+	doc = REXML::Document.new(File.new('ExcelAddin/ExcelAddIn.csproj'))
+	version = doc.get_elements("//ApplicationVersion").first.text
+#	raise "Version number has been set to #{version}, it should look like '<ApplicationVersion>$(PluginVersion)</ApplicationVersion>' for the build to work." if version != '$(PluginVersion)'
+end
+
+def clean path
+	rm_r path if File.exists? path
+end
+
+def get_dependencies
+	web = CookieAuthenticatedWeb.new(@username, @password, Go.new('https://go01.thoughtworks.com'))
+	ArtifactsDownloader.new('https://go01.thoughtworks.com', 
+							'Studios-dotNet-API', 
+							'compile-and-test', 
+							'release',
+							'lib').download(web)
+end
+
+def zip(target, destination)
+	load_assembly('ICSharpCode.SharpZipLib')
+	z = ICSharpCode::SharpZipLib::Zip::FastZip.new
+	z.create_empty_directories = true;
+	z.create_zip(destination, target, true, "")
+end

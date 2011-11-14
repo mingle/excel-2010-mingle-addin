@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Because Bundler has a static view of what specs are available, we don't #reflesh, \
+  so stub it out."
+full_name: Bundler::RubygemsIntegration#replace_refresh
+is_singleton: false
+name: replace_refresh
+params: ()
+visibility: public

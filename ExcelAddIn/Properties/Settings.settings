@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ExcelAddIn.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultQuery" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SELECT Priority, Sprint, COUNT(Number) WHERE Type = Story GROUP BY Priority, Sprint</Value>
+    </Setting>
+    <Setting Name="QueryPrefix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Query</Value>
+    </Setting>
+    <Setting Name="MinglePassword" Type="System.Security.SecureString" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MingleUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MingleHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Trace" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TraceLog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">log.log</Value>
+    </Setting>
+    <Setting Name="TraceEntryExit" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,39 @@
+h1. A Mingle Add-in for Microsoft Excel 2010
+
+h2. Overview
+
+This add-in gives the user a Mingle tab on the Excel ribbon from which they can connect to Mingle and invoke a UI for entering Mingle MQL queries. More details and a downloadable installer for the add-in "can be found here":http://community.thoughtworks.com/posts/fffff76095.
+
+h2. Dependencies
+
+h3. Required
+
+If you are building inside Visual Studio 2010 then you have all the required dependencies.
+
+* "Microsoft .NET 4.0 Framework Client Profile":http://www.microsoft.com/download/en/details.aspx?id=24872 is the minimum run-time framework.
+* MSBuild
+* MSTest
+
+h3. Bundled in Tools Folder
+
+Dependencies required to run the tests from the command line are included in the tools folder off the root.
+
+* IronRuby 1.0 (required for running the tests and included with the source code)
+* Microsoft Dynamic Language Runtime - DLR (required for running the tests and included with the source code)
+
+h2. Documentation
+
+More details and a downloadable installer for the add-in "can be found here":http://community.thoughtworks.com/posts/fffff76095.
+
+h2. Building the Add-In Solution
+
+You can build and test the solution from the command line using the build.bat batch file. Build.bat drives the build setting environment variables (buildvars.bat) and compilation/test (rakefile). Everything required to run a command-line build and test is included with the source. 
+
+* Open a command line window, navigate to the directory where you placed the source and run "build".
+
+h2. Tests
+
+Tests for the add-in are written in Ruby using the rspec gem. To run them from the command line:
+
+* Run buildvars.bat to establish the environment. You may need to adjust the settingsin buildvars.bat depending on the locations of .NET 4.0, msbuild and mstest on you computer.
+* "rake spec"
