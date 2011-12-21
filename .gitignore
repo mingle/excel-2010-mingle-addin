@@ -13,7 +13,7 @@ TestResults/
 *Re[sS]harper*.*
 _Re[sS]harper*/
 *Doc.xml
-vendor/ironruby/
+vendor/bundle/
 publish
 ExcelAddIn/bin
 WpfControls/bin
