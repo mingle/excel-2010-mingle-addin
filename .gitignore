@@ -13,11 +13,12 @@ TestResults/
 *Re[sS]harper*.*
 _Re[sS]harper*/
 *Doc.xml
-/vendor
-.bundle
+vendor/ironruby/
 publish
 ExcelAddIn/bin
 WpfControls/bin
+Setup/Debug/
+Setup/Release/
 
 
 
