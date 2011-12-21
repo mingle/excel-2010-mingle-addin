@@ -251,7 +251,7 @@ namespace ExcelAddIn
                         var rawResults = _mingleProject.ExecMql(q.Project.Id, q.Value);
                         if (null == rawResults) return;
                         TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\n\r\t\t" + q.Value);
-                        var results = rawResults.Descendants("result").Select(e => e);
+                        var results = rawResults.Elements("result").Select(e => e);
                         results.ToList().ForEach(r => r.AddFirst(new XElement("query", q.Name)));
                         cards.AddRange(results);
                     });
@@ -445,7 +445,7 @@ namespace ExcelAddIn
         /// <param name="project"></param>
         /// <param name="mql"></param>
         /// <returns></returns>
-        public XDocument ExecMql(string project, string mql)
+        public XElement ExecMql(string project, string mql)
         {
             return string.IsNullOrEmpty(mql) ? null : _mingle.GetProject(project).ExecMql(mql);
         }
@@ -490,7 +490,7 @@ namespace ExcelAddIn
         /// <param name="project"></param>
         /// <param name="mql"></param>
         /// <returns></returns>
-        XDocument ExecMql(string project, string mql);
+        XElement ExecMql(string project, string mql);
         
         /// <summary>
         /// Sets login credentials

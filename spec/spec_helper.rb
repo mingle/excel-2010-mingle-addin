@@ -25,7 +25,7 @@ require File.dirname(__FILE__)+'/fake_view'
 class String
     require 'System.Xml.Linq'
     def to_xml
-        System::Xml::Linq::XDocument.parse self
+        System::Xml::Linq::XElement.parse self
     end
 end
 
