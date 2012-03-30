@@ -98,9 +98,7 @@ namespace ExcelAddIn
         /// <returns></returns>
         internal SortedList<string, string> FetchProjects()
         {
-            TraceLog.WriteLine(new StackFrame().GetMethod().Name, "Getting the projects list:");
-            TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\t\t" + MingleSettings.Host);
-            TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\t\t" + MingleSettings.Login);
+            TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.CurrentCulture, "host={0}, login={1}", MingleSettings.Host, MingleSettings.Login));
 
             var projects = new MingleServer(MingleSettings.Host, MingleSettings.Login, MingleSettings.SecurePassword).GetProjectList();
             
@@ -115,10 +113,10 @@ namespace ExcelAddIn
         /// <param name="loginDetails"></param>
         public void SetMingleLoginDetails(LoginWindow.LoginDetails loginDetails)
         {
-            Debug.Assert(loginDetails != null, "loginDetails = null");
-            Debug.Assert(_ribbonModel != null, "_ribbonModel = null");
+
             try
             {
+                TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.CurrentCulture, "host={0}, user={1}", loginDetails.Host, loginDetails.Username));
                 _mingleProject.SetLoginDetails(loginDetails.Host, loginDetails.Username, loginDetails.Password);
 
             }
@@ -169,6 +167,7 @@ namespace ExcelAddIn
             }
             catch (Exception ex)
             {
+                TraceLog.Exception(new StackFrame().GetMethod().Name, ex);
                 _ribbon.AlertUser(ex.Message);
             }
         }
@@ -220,7 +219,7 @@ namespace ExcelAddIn
                 LoadQueries();
                 var queries = GetQueriesForActiveSheet();
                 TraceLog.WriteLine(new StackFrame().GetMethod().Name, "Found " + queries.Count() + " for active sheet.");
-                if (queries.Count() == 0)
+                if (!queries.Any())
                 {
                     queries.AddDefaultQuery();
                 }
@@ -250,7 +249,7 @@ namespace ExcelAddIn
                         // Guard against an empty MQL statement on the form
                         var rawResults = _mingleProject.ExecMql(q.Project.Id, q.Value);
                         if (null == rawResults) return;
-                        TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\n\r\t\t" + q.Value);
+                        TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\t\t" + q.Value);
                         var results = rawResults.Elements("result").Select(e => e);
                         results.ToList().ForEach(r => r.AddFirst(new XElement("query", q.Name)));
                         cards.AddRange(results);

@@ -9,6 +9,7 @@ Project("{B373B46A-B089-44D7-96CA-CD150D098BC8}") = "spec", "spec\spec.rbproj", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A293D34-5F7B-4D8B-9A2D-5DE368813B51}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		build.bat = build.bat
 		buildvars.bat = buildvars.bat
 		rakefile = rakefile
