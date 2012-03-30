@@ -20,3 +20,5 @@ WpfControls/bin
 Setup/Debug/
 Setup/Release/
 AddIn2010.sln.metaproj.tmp
+ruby/.idea
+ExcelAddIn/
