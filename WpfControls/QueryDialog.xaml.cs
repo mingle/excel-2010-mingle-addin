@@ -16,6 +16,8 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using ThoughtWorksCoreLib;
@@ -27,7 +29,7 @@ namespace WpfControls
     /// </summary>
     public partial class QueryDialog : Window
     {
-        private Queries _queries;
+        private readonly Queries _queries;
         private readonly ResourceDictionary _resources = new ResourceDictionary();
 
         /// <summary>
@@ -55,6 +57,7 @@ namespace WpfControls
         private void OnButtonQueryClick(object sender, RoutedEventArgs e)
         {
             _queries.Save();
+            TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.CurrentCulture,"Saving {0} queries.", _queries.Count()));
             _queries.Fetch();
             Close();
         }

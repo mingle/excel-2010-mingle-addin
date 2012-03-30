@@ -98,11 +98,11 @@ namespace ExcelAddIn
         /// <returns></returns>
         internal SortedList<string, string> FetchProjects()
         {
-            TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.CurrentCulture, "host={0}, login={1}", MingleSettings.Host, MingleSettings.Login));
+            TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.InstalledUICulture, "host={0}, login={1}", MingleSettings.Host, MingleSettings.Login));
 
             var projects = new MingleServer(MingleSettings.Host, MingleSettings.Login, MingleSettings.SecurePassword).GetProjectList();
             
-            projects.ToList().ForEach(p => TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\t\t" + p.Key));
+            projects.ToList().ForEach(p => TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.InstalledUICulture,"project: {0}",p.Key)));
             
             return projects;         
         }
@@ -116,13 +116,14 @@ namespace ExcelAddIn
 
             try
             {
-                TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.CurrentCulture, "host={0}, user={1}", loginDetails.Host, loginDetails.Username));
+                TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.InstalledUICulture, "host={0}, user={1}", loginDetails.Host, loginDetails.Username));
                 _mingleProject.SetLoginDetails(loginDetails.Host, loginDetails.Username, loginDetails.Password);
 
             }
             catch (Exception ex)
             {
                 _ribbon.AlertUser(ex.Message);
+                TraceLog.Exception(new StackFrame().GetMethod().Name,ex);
                 return;
             } 
             _ribbonModel.EnableFetchButton();
@@ -145,8 +146,9 @@ namespace ExcelAddIn
             }
             catch (Exception ex)
             {
+                TraceLog.Exception(new StackFrame().GetMethod().Name, ex);
                 _ribbon.AlertUser(ex.Message);
-                return;
+                throw;
             }
         }
 
@@ -185,7 +187,7 @@ namespace ExcelAddIn
 
         private void AddQuery(ExcelQueryProperty p)
         {
-            TraceLog.WriteLine(new StackFrame().GetMethod().Name, "Adding query:\n\r\t\tName = " + p.Name + "\n\r\t\tValue = " + p.Value);
+            TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.InstalledUICulture, "Adding query: Name = {0}, Value = {1}", p.Name, p.Value));
             _ribbonModel.QueriesForSheet(p.Sheet)
                 .AddQuery(p.ExtractProject(_ribbonModel.Projects), p.Value, p.QueryName);
         }
@@ -218,7 +220,7 @@ namespace ExcelAddIn
                 TraceLog.WriteLine(new StackFrame().GetMethod().Name, "Calling LoadQueries()");
                 LoadQueries();
                 var queries = GetQueriesForActiveSheet();
-                TraceLog.WriteLine(new StackFrame().GetMethod().Name, "Found " + queries.Count() + " for active sheet.");
+                TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.InstalledUICulture, "Found {0} queries for (active) sheet {1}.",queries.Count(), Excel.GetNameActiveSheet()));
                 if (!queries.Any())
                 {
                     queries.AddDefaultQuery();
@@ -249,7 +251,7 @@ namespace ExcelAddIn
                         // Guard against an empty MQL statement on the form
                         var rawResults = _mingleProject.ExecMql(q.Project.Id, q.Value);
                         if (null == rawResults) return;
-                        TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\t\t" + q.Value);
+                        TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.InstalledUICulture,"{0}", q.Value));
                         var results = rawResults.Elements("result").Select(e => e);
                         results.ToList().ForEach(r => r.AddFirst(new XElement("query", q.Name)));
                         cards.AddRange(results);
@@ -460,7 +462,7 @@ namespace ExcelAddIn
             MingleSettings.Host = mingleHost;
             MingleSettings.Login = mingleUser;
             MingleSettings.Password = minglePassword;
-            TraceLog.WriteLine(new StackFrame().GetMethod().Name, "\n\r\t\t" + MingleSettings.Host + "\n\r\t\t" + MingleSettings.Login);
+            TraceLog.WriteLine(new StackFrame().GetMethod().Name, string.Format(CultureInfo.InstalledUICulture,"host={0}, login={1}", MingleSettings.Host, MingleSettings.Login));
             _mingle = new MingleServer(mingleHost, mingleUser, MingleSettings.SecurePassword);
         }
 

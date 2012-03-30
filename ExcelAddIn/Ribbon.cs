@@ -17,6 +17,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using Microsoft.Office.Tools.Ribbon;
 using ThoughtWorksCoreLib;
 using WpfControls;
@@ -130,6 +131,7 @@ namespace ExcelAddIn
             catch (Exception ex)
             {
                 AlertUser(ex.Message);
+                TraceLog.Exception(new StackFrame().GetMethod().Name, ex);
             }
         }
     }
