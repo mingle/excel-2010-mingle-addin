@@ -34,7 +34,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.146</ApplicationVersion>
+    <ApplicationVersion>1.0.0.147</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -167,12 +167,10 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ThoughtWorksCoreLib, Version=0.8.9.18691, Culture=neutral, PublicKeyToken=0de209e9319f2b06, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ThoughtWorksCoreLib, Version=1.0.0.30979, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\lib\ThoughtWorksCoreLib.dll</HintPath>
     </Reference>
-    <Reference Include="ThoughtWorksMingleLib, Version=0.8.9.18691, Culture=neutral, PublicKeyToken=0de209e9319f2b06, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ThoughtWorksMingleLib, Version=1.0.0.30979, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\lib\ThoughtWorksMingleLib.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
