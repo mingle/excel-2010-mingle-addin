@@ -148,7 +148,7 @@
     <ManifestKeyFile>ExcelAddIn_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>9E40E60CEB6F4BA9B71FA6A725DA3DC5B043BBD2</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>398531767B20FF82B184EE9DD678F6045A4EEFF4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
