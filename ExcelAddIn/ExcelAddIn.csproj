@@ -167,11 +167,13 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ThoughtWorksCoreLib, Version=1.0.0.30979, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ThoughtWorksCoreLib">
       <HintPath>..\lib\ThoughtWorksCoreLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="ThoughtWorksMingleLib, Version=1.0.0.30979, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ThoughtWorksMingleLib">
       <HintPath>..\lib\ThoughtWorksMingleLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>

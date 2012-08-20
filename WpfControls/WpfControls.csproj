@@ -45,8 +45,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="ThoughtWorksCoreLib">
+    <Reference Include="ThoughtWorksCoreLib, Version=1.0.0.14453, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\lib\ThoughtWorksCoreLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
