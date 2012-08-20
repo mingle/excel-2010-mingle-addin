@@ -20,7 +20,7 @@ describe "mingle office" do
     def excel() @excel ||= mock_interface(IAmExcel) end
     def mingle() @mingle ||= mock_interface(ITalkToMingle) end
        
-    DEFAULT_QUERY = { :project => 'foo_id', :query => 'SELECT Priority, Sprint, COUNT(Number) WHERE Type = Story GROUP BY Priority, Sprint' }
+    DEFAULT_QUERY = { :project => 'foo_id', :query => '' }
     
     before do
         excel.stub(:get_name_active_sheet).and_return('sheet1')
