@@ -34,7 +34,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.147</ApplicationVersion>
+    <ApplicationVersion>1.0.0.148</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -148,7 +148,7 @@
     <ManifestKeyFile>ExcelAddIn_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B2283218B727C5FCE1E79BB31F9545C50BE21AB6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>9E40E60CEB6F4BA9B71FA6A725DA3DC5B043BBD2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
