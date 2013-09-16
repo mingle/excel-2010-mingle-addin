@@ -15,9 +15,14 @@ _Re[sS]harper*/
 *Doc.xml
 vendor/bundle/
 publish
-ExcelAddIn/bin
+ExcelAddIn/bin/
 WpfControls/bin
 Setup/Debug/
 Setup/Release/
 ruby/.idea
-ExcelAddIn/
+_Upgrade*
+Upgrade*
+packages/
+lib/
+ExcelAddIn/ExcelAddin
+ExcelAddIn/ExcelAddin.*.zip
