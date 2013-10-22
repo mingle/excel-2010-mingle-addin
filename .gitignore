@@ -25,4 +25,8 @@ Upgrade*
 packages/
 lib/
 ExcelAddIn/ExcelAddin
+ExcelAddIn/ExcelAddin.2011
 ExcelAddIn/ExcelAddin.*.zip
+ExcelAddIn/MingleExcelAddIn
+ExcelAddIn/MingleExcelAddIn.zip
+Setup/Setup
