@@ -26,6 +26,7 @@ using WpfControls;
 using Action = System.Action;
 using Settings = ExcelAddIn.Properties.Settings;
 using Resources = ExcelAddIn.Properties.Resources;
+using Microsoft.Office.Interop.Excel;
 
 namespace ExcelAddIn
 {
@@ -242,6 +243,11 @@ namespace ExcelAddIn
         private void RunQueries()
         {
             TraceLog.WriteLine(new StackFrame().GetMethod().Name, "Running queries");
+
+            var work = _excel.Properties as WorksheetProperties;
+            var oldCalculation = work.CalculationType;
+            work.CalculationType = Convert.ToInt32(XlCalculation.xlCalculationManual);
+
             try
             {
                 var cards = new List<XElement>();
@@ -264,13 +270,17 @@ namespace ExcelAddIn
                 var message = (string.Format(CultureInfo.InstalledUICulture, "{0}", ex.Message));
 
                 if (ex.Message.ToLower().Contains("(422) unprocessable entity"))
-                { 
-                    message = string.Format(CultureInfo.InstalledUICulture,"{0}\n\n\r{1}", 
+                {
+                    message = string.Format(CultureInfo.InstalledUICulture, "{0}\n\n\r{1}",
                                                     message, Resources.Html422Elaboration);
                     TraceLog.WriteLine(new StackFrame().GetMethod().Name, message);
                 }
 
                 _ribbon.AlertUser(message);
+            }
+            finally
+            {
+                work.CalculationType = oldCalculation;
             }
         }
 

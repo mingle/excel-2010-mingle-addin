@@ -177,6 +177,28 @@ namespace ExcelAddIn
             {
                 _worksheet.Visible = XlSheetVisibility.xlSheetVeryHidden;
             }
+
+            /// <summary>
+            /// Gets and Sets the CalculationType
+            /// </summary>
+            public int CalculationType
+            {
+                get
+                {
+                    return _worksheet.Application.Calculation;
+                }
+                set
+                {
+                    if (Enum.IsDefined(typeof(XlCalculation), value))
+                    {
+                        _worksheet.Application.Calculation = value;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Invalid value for CalculationType. Allowed values -4135,-4105 and 2");
+                    }
+                }
+            }
         }
 
         /// <summary>

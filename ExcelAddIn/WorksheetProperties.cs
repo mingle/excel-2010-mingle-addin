@@ -51,6 +51,21 @@ namespace ExcelAddIn
         }
 
         /// <summary>
+        /// Gets and Sets the Calculation Type
+        /// </summary>
+        public int CalculationType
+        {
+            get
+            {
+                return Worksheet.CalculationType;
+            }
+            set
+            {
+                Worksheet.CalculationType = value;
+            }
+        }
+
+        /// <summary>
         /// Implements IEnumerable GetEnumerator for the list of properties
         /// </summary>
         /// <returns></returns>
